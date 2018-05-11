@@ -1,0 +1,21 @@
+{
+  "name": "neighborhood-map",
+  "homepage": "https://github.com/SoleGH/neighborhood-map",
+  "authors": [
+    "sole <soleyang4g@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "knockout": "^3.4.2",
+    "jQuery": "^3.3.1"
+  }
+}
