@@ -2,32 +2,38 @@
 <html>
 
 <head>
-    <meta charset="utf-8" name="viewport">
+    <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1">
     <title>Neighborhood map</title>
     <link rel="stylesheet" href="css/base.css">
 </head>
 
 <body>
     <div class="container">
-        <div class="options-box">
+        <div class="options-box" data-bind="visible:optBarStatus">
             <h1 data-bind="text:cityname"></h1>
-            <div>
-                <span class="text">Search for nearby places</span>
-                <input id="places-search" type="text" placeholder="Ex: 市民中心">
-                <input id="go-places" type="button" value="Go">
+            <div id="weather">
+                <!-- <img data-bind="attr:{src:dayPictureUrl}">   -->
+                <div data-bind="text:temperature"></div>
+                <div data-bind="text:weather"></div>
+                <div data-bind="text:curTemperature"></div>
             </div>
-            <div id="markers-table"></div>
+            <div>
+                <span class="text">输入要查询的地址：</span>
+                <input id="places-search" type="text" value="腾讯">
+                <input id="filter-places" data-bind="click:filterPlaces" type="button" value="过滤">
+                <input id="go-places" data-bind="click:textSearchPlaces" type="button" value="查询">
+            </div>
             <table>
-                <tbody data-bind="foreach: markers">
+                <tbody data-bind="foreach: barMarkers">
                     <tr>
-                        <td data-bind="text: title"></td>
+                        <td data-bind="click:$parent.activeMarker,text: title,attr:{id:id}"></td>
                     </tr>
                 </tbody>
             </table>
 
         </div>
-        <div id="map"></div>
-        <button id="float-button"></button>
+        <div id="map" data-bind="event:{onload:initMap}"></div>
+        <button id="float-button" data-bind="click:showHideOptBat"></button>
         <!-- 悬浮按钮 -->
 
     </div>

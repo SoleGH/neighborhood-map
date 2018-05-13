@@ -25,17 +25,19 @@ h1 {
 #map {
     bottom: 0px;
     height: 100%;
-    left: 362px;
+    /* width: 100%; */
+    left: 26%;
     position: absolute;
     right: 0px;
 }
 
 td,.text {
     font-size: 12px;
+    cursor: pointer;
 }
 
 #places-search {
-    width: 84%;
+    width: 68%;
 }
 
 .options-box {
@@ -46,13 +48,13 @@ td,.text {
     line-height: 35px;
     padding: 10px 10px 30px 10px;
     text-align: left;
-    width: 340px;
+    width: 26%;
 }
 #float-button {
     position: fixed; 
-    height: 40px;
-    width: 45px;
+    height: 4%;
+    width: 4%;
     top: 90px;
-    left: 370px;
+    left: 26.5%;
     background: url(../images/menu.png) no-repeat left center;
     }
