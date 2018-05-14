@@ -30,6 +30,10 @@ h1 {
     position: absolute;
     right: 0px;
 }
+#barMarkersTable{
+    height: 50%;
+    overflow: auto;
+}
 
 td,.text {
     font-size: 12px;

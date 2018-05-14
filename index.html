@@ -2,7 +2,8 @@
 <html>
 
 <head>
-    <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <meta  name="viewport" content="width=device-width,initial-scale=1">
     <title>Neighborhood map</title>
     <link rel="stylesheet" href="css/base.css">
 </head>
@@ -19,29 +20,34 @@
             </div>
             <div>
                 <span class="text">输入要查询的地址：</span>
-                <input id="places-search" type="text" value="腾讯">
+                <input id="places-search" type="text" value="火锅" data-bind="onload:initTextSearchPlaces">
                 <input id="filter-places" data-bind="click:filterPlaces" type="button" value="过滤">
                 <input id="go-places" data-bind="click:textSearchPlaces" type="button" value="查询">
             </div>
-            <table>
-                <tbody data-bind="foreach: barMarkers">
-                    <tr>
-                        <td data-bind="click:$parent.activeMarker,text: title,attr:{id:id}"></td>
-                    </tr>
-                </tbody>
-            </table>
-
+            <div id="barMarkersTable">
+                <table>
+                    <tbody data-bind="foreach: barMarkers">
+                        <tr>
+                            <td data-bind="click:$parent.activeMarker,text: title,attr:{id:id}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div id="map" data-bind="event:{onload:initMap}"></div>
         <button id="float-button" data-bind="click:showHideOptBat"></button>
         <!-- 悬浮按钮 -->
 
     </div>
-
+    <script>
+        
+    </script>
     <script src="bower_components/jQuery/dist/jquery.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=AIzaSyCgBVXd2pk-QZ2EPZu43GEcCxonlNxWsCQ&callback=initMap"></script>
     <script src="bower_components/knockout/dist/knockout.js"></script>
     <script src="js/app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=AIzaSyCgBVXd2pk-QZ2EPZu43GEcCxonlNxWsCQ&callback=initMap" onerror="mapError">
+    </script>
+    
 
 
 
